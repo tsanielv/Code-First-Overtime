@@ -2,24 +2,27 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CodeFirst
 {
-    class BaseContext : DbContext
+    public class BaseContext : DbContext
     { 
-        public BaseContext() : base("Console.Overtime") { }
+        public BaseContext() : base("Console.Overtime") {
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BaseContext, CodeFirst.Migrations.Configuration>());
+        }
 
-        public DbSet<Overtime.Department> Departments { get; set; }
-        public DbSet<Overtime.Role> Roles { get; set; }
-        public DbSet<Overtime.Employee> Employees { get; set; }
-        public DbSet<Overtime.History_Employee> History_Employees { get; set; }
-        public DbSet<Overtime.Customer> Customers { get; set; }
-        public DbSet<Overtime.Tax> Taxes { get; set; }
-        public DbSet<Overtime.OvertimeType> OvertimeTypes { get; set; }
-        public DbSet<Overtime.Approve_History> Approve_Histories { get; set; }
-        public DbSet<Overtime.DataOvertime> DataOvertimes { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<Role> Roles { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<History_Employee> History_Employees { get; set; }
+        public DbSet<Customer> Customers { get; set; }
+        public DbSet<Tax> Taxes { get; set; }
+        public DbSet<OvertimeType> OvertimeTypes { get; set; }
+        public DbSet<Approve_History> Approve_Histories { get; set; }
+        public DbSet<DataOvertime> DataOvertimes { get; set; }
     }
 }

@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace CodeFirst.Models
 {
-    class Overtime
-    { 
         public class Department
         {
             [Key]
@@ -115,7 +113,4 @@ namespace CodeFirst.Models
             public int Overtime_id { get; set; }
             public virtual DataOvertime DataOvertime { get; set; }
         }
-
-       
-    }
 }
