@@ -122,7 +122,71 @@ namespace CodeFirst.Controller
             return getAll;
         }
 
-
         
+        //method searchId untuk mencari data berdasarkan id yang nantinya akan di update (semacam input where-nya gitu deh)
+        public Employee searchId(int input)
+        {
+            var employee = _context.Employees.Find(input);
+            if (employee == null)
+            {
+                Console.WriteLine("Id yang dicari tidak ada");
+            }
+
+            return employee;
+        }
+
+
+        //Method Update untuk update tabel Role dengan parameter id variabel input (inputan user)
+        public int Update(int input)
+        {
+            //memasukkan data baru
+            Console.Write("Masukkan Nama Baru           : ");
+            string name_employee = Console.ReadLine();
+            Console.Write("Masukkan Alamat Baru         : ");
+            string address_employee = Console.ReadLine();
+            Console.Write("Masukkan Gender Baru         : ");
+            string gender_employee = Console.ReadLine();
+            Console.Write("Masukkan Email Baru          : ");
+            string email_employee = Console.ReadLine();
+            Console.Write("Masukkan Password Baru       : ");
+            string password_emlpoyee = Console.ReadLine();
+            Console.Write("Masukkan Department ID Baru  : ");
+            int department_id = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Masukkan Role ID Baru        : ");
+            int role_id = Convert.ToInt32(Console.ReadLine());
+
+            var getemployee = _context.Employees.Find(input);
+            if (getemployee == null)
+            {
+                Console.WriteLine("Id yang dicari tidak ada");
+            }
+            else
+            {
+                //proses penyimpanan ke database
+                Employee employee = searchId(input);
+                employee.name = name_employee;
+                employee.address = address_employee;
+                gender_employee
+                employee.email = email_employee;
+                employee.password = password_emlpoyee;
+                employee.Department = department_id;
+                employee.Role = role_id;
+
+                _context.Entry(employee).State = System.Data.Entity.EntityState.Modified;
+                _context.SaveChanges();
+            }
+            return input;
+        }
+
+        //Method Delete untuk menghapus data dengan parameter id variabel input (inputan user)
+        public int Delete(int input)
+        {
+            Employee employee = _context.Employees.Find(input);
+            _context.Entry(employee).State = System.Data.Entity.EntityState.Deleted;
+            _context.SaveChanges();
+            return input;
+        }
+
+
     }
 }
