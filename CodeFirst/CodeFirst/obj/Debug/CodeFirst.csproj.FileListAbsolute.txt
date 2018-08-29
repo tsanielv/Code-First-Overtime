@@ -15,7 +15,8 @@ D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\bin\Debug\Enti
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\bin\Debug\EntityFramework.SqlServer.dll
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\bin\Debug\EntityFramework.xml
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\bin\Debug\EntityFramework.SqlServer.xml
-D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.Department.resources
-D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.csproj.GenerateResource.Cache
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.exe
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.pdb
+D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.csprojResolveAssemblyReference.cache
+D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.Department.resources
+D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.csproj.GenerateResource.Cache

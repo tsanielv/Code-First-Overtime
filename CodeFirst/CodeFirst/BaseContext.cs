@@ -12,7 +12,6 @@ namespace CodeFirst
     public class BaseContext : DbContext
     { 
         public BaseContext() : base("Console.Overtime") {
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<BaseContext, CodeFirst.Migrations.Configuration>());
         }
 
         public DbSet<Department> Departments { get; set; }
