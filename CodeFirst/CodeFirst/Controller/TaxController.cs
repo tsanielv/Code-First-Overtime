@@ -15,6 +15,7 @@ namespace CodeFirst.Controller
             BaseContext _context = new BaseContext();
             int input;
 
+            Console.Clear();
             System.Console.WriteLine("====================================");
             Console.WriteLine("1. Insert Data Tax");
             Console.WriteLine("2. Lihat  Data Semua Tax");
@@ -65,7 +66,7 @@ namespace CodeFirst.Controller
 
                 case 5:
                     Console.Clear();
-                    Console.Write("Masukkan Id yang didihapus : ");
+                    Console.Write("Masukkan Id yang ingin dihapus : ");
                     input = Convert.ToInt32(Console.ReadLine());
                     Delete(input);
                     Console.ReadKey();
@@ -78,7 +79,7 @@ namespace CodeFirst.Controller
         {
 
             Console.Write("Masukkan Nama Type : ");
-            char type_tax = Convert.ToChar(Console.ReadLine());
+            string type_tax = Console.ReadLine();
             Console.Write("Masukkan Amount : ");
             int amount_tax = Convert.ToInt32(Console.ReadLine());
 
@@ -89,7 +90,7 @@ namespace CodeFirst.Controller
             };
             try
             {
-                _context.Tax.Add(tax);
+                _context.Taxes.Add(tax);
                 _context.SaveChanges();
             }
             catch (Exception e)
@@ -150,7 +151,7 @@ namespace CodeFirst.Controller
         public int Update(int input)
         {
             Console.Write("Masukkan Type Baru   :");
-            char new_type = Convert.ToChar(Console.ReadLine());
+            string new_type = Console.ReadLine();
             Console.Write("Masukkan Amount Baru :");
             int new_amount = Convert.ToInt32(Console.ReadLine());
 

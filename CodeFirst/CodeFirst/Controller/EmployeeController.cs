@@ -38,15 +38,34 @@ namespace CodeFirst.Controller
                     break;
 
                 case 3:
-                    
+                    Console.Clear();
+                    Console.Write("Masukkan Kode Karyawan yang dicari : ");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    Console.ReadKey();
                     break;
-
                 case 4:
-                    
+                    Console.Clear();
+                    Console.Write("Masukkan Id yang dicari : ");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("===========================");
+                    Console.WriteLine("Data Sebelum Diubah");
+                    Console.WriteLine("===========================");
+                    GetById(input);
+                    Console.WriteLine("===========================");
+                    Update(input);
+                    Console.WriteLine("===========================");
+                    Console.WriteLine("Data Setelah Diubah");
+                    Console.WriteLine("===========================");
+                    GetById(input);
+                    Console.WriteLine("===========================");
+                    Console.ReadKey();
                     break;
-
                 case 5:
-                    
+                    Console.Clear();
+                    Console.Write("Masukkan Id yang didihapus : ");
+                    input = Convert.ToInt32(Console.ReadLine());
+                    Delete(input);
+                    Console.ReadKey();
                     break;
             }
         }
@@ -103,9 +122,9 @@ namespace CodeFirst.Controller
             var getAll = _context.Employees.ToList();
             var d = (from Employee in _context.Employees
                      join Department in _context.Departments on Employee.departmentsId equals Department.id
-                     join Role in _context.Roles on Employee.roleId equals Role.id
-                     select new { Employee.name, Employee.address, Employee.gendar, Employee.email, Employee.password, Employee.salary, dname = Department.name, rname = Role.name }).ToList();
-            for(int i=0; i<=d.Count(); i++)
+                     join Role in _context.Roles on Employee.rolesId equals Role.id
+                     select new { Employee.name, Employee.address, Employee.gender, Employee.email, Employee.password, Employee.salary, dname = Department.name, rname = Role.name }).ToList();
+            for (int i = 0; i <= d.Count(); i++)
             {
                 Console.WriteLine("-------------------------");
                 Console.WriteLine("Nama       : " + d[i].name);
@@ -123,6 +142,7 @@ namespace CodeFirst.Controller
         }
 
 
+        //Method GetById untuk mencari data karyawan berdasarkan id dengan parameter inputan user
         public Employee GetById(int input)
         {
             Console.Clear();
@@ -130,8 +150,8 @@ namespace CodeFirst.Controller
             var employee = _context.Employees.FirstOrDefault(j => j.id == input);
             var d = (from Employee in _context.Employees
                      join Department in _context.Departments on Employee.departmentsId equals Department.id
-                     join Role in _context.Roles on Employee.roleId equals Role.id
-                     select new { Employee.name, Employee.address, Employee.gendar, Employee.email, Employee.password, Employee.salary, dname = Department.name, rname = Role.name }).ToList();
+                     join Role in _context.Roles on Employee.rolesId equals Role.id
+                     select new { Employee.name, Employee.address, Employee.gender, Employee.email, Employee.password, Employee.salary, dname = Department.name, rname = Role.name }).ToList();
             for (int i = 0; i <= d.Count(); i++)
             {
                 Console.WriteLine("-------------------------");
@@ -148,6 +168,7 @@ namespace CodeFirst.Controller
 
             return employee;
         }
+
 
         //method searchId untuk mencari data berdasarkan id yang nantinya akan di update (semacam input where-nya gitu deh)
         public Employee searchId(int input)
@@ -195,8 +216,8 @@ namespace CodeFirst.Controller
                 employee.gender = gender_employee;
                 employee.email = email_employee;
                 employee.password = password_emlpoyee;
-                employee.Department = department_id;
-                employee.Role = role_id;
+                employee.departmentsId = department_id;
+                employee.rolesId = role_id;
 
                 _context.Entry(employee).State = System.Data.Entity.EntityState.Modified;
                 _context.SaveChanges();

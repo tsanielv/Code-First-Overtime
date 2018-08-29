@@ -54,8 +54,12 @@
   <ItemGroup>
     <Compile Include="BaseContext.cs" />
     <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\DataOvertimeController.cs" />
     <Compile Include="Controller\DepartmentController.cs" />
+    <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\RoleController.cs" />
+    <Compile Include="Controller\TaxController.cs" />
+    <Compile Include="Controller\TypeOvertimeController.cs" />
     <Compile Include="Migrations\201808290151371_Department.cs" />
     <Compile Include="Migrations\201808290151371_Department.Designer.cs">
       <DependentUpon>201808290151371_Department.cs</DependentUpon>

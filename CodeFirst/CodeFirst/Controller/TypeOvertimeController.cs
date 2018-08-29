@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CodeFirst.Controller
 {
-    class TaxController
+    class TypeOvertimeController
     {
         BaseContext _context = new BaseContext();
         public void Menu()

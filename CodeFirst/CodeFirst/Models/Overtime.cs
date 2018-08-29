@@ -31,14 +31,14 @@ namespace CodeFirst.Models
             public int id { get; set; }
             public string name { get; set; }
             public string address { get; set; }
-            public char gender { get; set; }
+            public string gender { get; set; }
             public string email { get; set; }
             public string password { get; set; }
             public int salary { get; set; }
 
-            //id id yang diambil dari tabel lain tidak perlu dituliskan karena, sudah ada public virtual
-            //public int departments_id { get; set; }
-            //public int roles_id { get; set; }
+            //id id yang diambil dari tabel lain dituliskan dengan nama yang berbeda dari properti virtual (nama properti virtual tabel_field)
+            public int departmentsId { get; set; }
+            public int rolesId { get; set; }
             public virtual Department Department { get; set; }
             public virtual Role Role { get; set; }
             public virtual List<History_Employee> History_Employees { get; set; }
@@ -69,7 +69,7 @@ namespace CodeFirst.Models
         {
             [Key]
             public int id { get; set; }
-            public char type { get; set; }
+            public string type { get; set; }
             public int amount { get; set; }
             public virtual List<DataOvertime> DataOvertimes { get; set; }
 
@@ -79,7 +79,7 @@ namespace CodeFirst.Models
         {
             [Key]
             public int id { get; set; }
-            public char type { get; set; }
+            public string type { get; set; }
             public string detail { get; set; }
             public int amount { get; set; }
             public virtual List<DataOvertime> DataOvertimes { get; set; }
@@ -90,10 +90,14 @@ namespace CodeFirst.Models
             [Key]
             public int id { get; set; }
             public DateTime date { get; set; }
-            public int overtime_pay { get; set; }
             public string status { get; set; }
 
-            
+            public int employeeID { get; set; }
+            public int taxID { get; set; }
+            public int overtimeTypeID { get; set; }
+            public int customerID { get; set; }
+
+
             public virtual Employee Employee { get; set; }
             public virtual Tax Tax { get; set; }
             public virtual OvertimeType OvertimeType { get; set; }

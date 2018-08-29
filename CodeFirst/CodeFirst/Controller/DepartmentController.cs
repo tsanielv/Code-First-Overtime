@@ -15,6 +15,7 @@ namespace CodeFirst.Controller
             BaseContext _context = new BaseContext();
             int input;
 
+            Console.Clear();
             System.Console.WriteLine("====================================");
             Console.WriteLine("1. Insert Data Department");
             Console.WriteLine("2. Lihat  Data Semua Department");
