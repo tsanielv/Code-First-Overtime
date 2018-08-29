@@ -122,7 +122,33 @@ namespace CodeFirst.Controller
             return getAll;
         }
 
-        
+
+        public Employee GetById(int input)
+        {
+            Console.Clear();
+
+            var employee = _context.Employees.FirstOrDefault(j => j.id == input);
+            var d = (from Employee in _context.Employees
+                     join Department in _context.Departments on Employee.departmentsId equals Department.id
+                     join Role in _context.Roles on Employee.roleId equals Role.id
+                     select new { Employee.name, Employee.address, Employee.gendar, Employee.email, Employee.password, Employee.salary, dname = Department.name, rname = Role.name }).ToList();
+            for (int i = 0; i <= d.Count(); i++)
+            {
+                Console.WriteLine("-------------------------");
+                Console.WriteLine("Nama       : " + d[i].name);
+                Console.WriteLine("Address    : " + d[i].address);
+                Console.WriteLine("Gender     : " + d[i].gender);
+                Console.WriteLine("Email      : " + d[i].email);
+                Console.WriteLine("Password   : " + d[i].password);
+                Console.WriteLine("Salary     : " + d[i].salary);
+                Console.WriteLine("Department : " + d[i].dname);
+                Console.WriteLine("Role       : " + d[i].rname);
+                Console.WriteLine("-------------------------");
+            }
+
+            return employee;
+        }
+
         //method searchId untuk mencari data berdasarkan id yang nantinya akan di update (semacam input where-nya gitu deh)
         public Employee searchId(int input)
         {
@@ -166,7 +192,7 @@ namespace CodeFirst.Controller
                 Employee employee = searchId(input);
                 employee.name = name_employee;
                 employee.address = address_employee;
-                gender_employee
+                employee.gender = gender_employee;
                 employee.email = email_employee;
                 employee.password = password_emlpoyee;
                 employee.Department = department_id;
