@@ -20,3 +20,6 @@ D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\Code
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.csprojResolveAssemblyReference.cache
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.Migrations.Department.resources
 D:\Materi Bootcamp\Code-First-Overtime-master\CodeFirst\CodeFirst\obj\Debug\CodeFirst.csproj.GenerateResource.Cache
+C:\Users\user\Documents\GitHub\Code-First-Overtime\CodeFirst\CodeFirst\bin\Debug\CodeFirst.exe.config
+C:\Users\user\Documents\GitHub\Code-First-Overtime\CodeFirst\CodeFirst\obj\Debug\CodeFirst.exe
+C:\Users\user\Documents\GitHub\Code-First-Overtime\CodeFirst\CodeFirst\obj\Debug\CodeFirst.pdb
