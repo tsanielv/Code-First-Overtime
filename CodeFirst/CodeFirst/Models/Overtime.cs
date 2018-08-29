@@ -35,6 +35,8 @@ namespace CodeFirst.Models
             public string email { get; set; }
             public string password { get; set; }
             public int salary { get; set; }
+
+            //id id yang diambil dari tabel lain tidak perlu dituliskan karena, sudah ada public virtual
             //public int departments_id { get; set; }
             //public int roles_id { get; set; }
             public virtual Department Department { get; set; }
@@ -49,7 +51,7 @@ namespace CodeFirst.Models
             public int id { get; set; }
             public string status { get; set; }
             public DateTime date_deleted { get; set; }
-            //public int employees_id { get; set; }
+           
             public virtual Employee Employee { get; set; }
         }
 
@@ -91,11 +93,7 @@ namespace CodeFirst.Models
             public int overtime_pay { get; set; }
             public string status { get; set; }
 
-            // public int employees_id { get; set; }
-            // public int taxes_id { get; set; }
-            //public int type_id { get; set; }
-            //public int customers_id { get; set; }
-
+            
             public virtual Employee Employee { get; set; }
             public virtual Tax Tax { get; set; }
             public virtual OvertimeType OvertimeType { get; set; }
@@ -110,7 +108,7 @@ namespace CodeFirst.Models
             public int id { get; set; }
             public DateTime date { get; set; }
             public string status { get; set; }
-            //public int Overtime_id { get; set; }
+            
             public virtual DataOvertime DataOvertime { get; set; }
         }
 }

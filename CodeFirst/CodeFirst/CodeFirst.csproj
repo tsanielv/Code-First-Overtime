@@ -53,6 +53,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseContext.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
+    <Compile Include="Controller\DepartmentController.cs" />
+    <Compile Include="Controller\RoleController.cs" />
     <Compile Include="Migrations\201808290151371_Department.cs" />
     <Compile Include="Migrations\201808290151371_Department.Designer.cs">
       <DependentUpon>201808290151371_Department.cs</DependentUpon>
